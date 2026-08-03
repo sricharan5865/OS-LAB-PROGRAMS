@@ -1,11 +1,10 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
-TARGET = shellforge
 
-all: $(TARGET)
+all: shellforge
 
-$(TARGET): shell.c
-	$(CC) $(CFLAGS) -o $(TARGET) main.c
+shellforge: shell.c
+	$(CC) $(CFLAGS) shell.c -o shellforge
 
 clean:
-	rm -f $(TARGET) *.o
+	rm -f shellforge *.o

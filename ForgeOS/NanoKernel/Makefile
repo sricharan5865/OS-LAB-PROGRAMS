@@ -1,11 +1,10 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
-TARGET = nanokernel
 
-all: $(TARGET)
+all: nanokernel
 
-$(TARGET): kernel.c
-	$(CC) $(CFLAGS) -o $(TARGET) kernel.c
+nanokernel: kernel.c
+	$(CC) $(CFLAGS) kernel.c -o nanokernel
 
 clean:
-	rm -f $(TARGET) *.o
+	rm -f nanokernel *.o

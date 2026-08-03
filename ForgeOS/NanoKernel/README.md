@@ -1,7 +1,6 @@
-# NanoKernel (Kernel Space)
+# ForgeOS Project 2: NanoKernel (Kernel Space)
 
-Kernel-space subproject for **ForgeOS**.
-
-## Structure
-- `kernel.c`: Main entry point for NanoKernel modules / system components.
-- `Makefile`: Kernel module / binary build target.
+## Features
+- Process Control Block (PCB) Management
+- Task Scheduler Simulator
+- Kernel Interrupt Vector Abstraction

@@ -1,8 +1,7 @@
-# Shellforge (User Space)
-
-Unix-style command line shell written in C for the **ForgeOS** project.
+# ForgeOS Project 1: Shellforge (User Space Shell)
 
 ## Features
-- Interactive REPL command loop.
-- Built-in commands (`cd`, `help`, `exit`).
-- Execution of external binaries via `fork()` and `execvp()`.
+- Interactive Command Prompt
+- Built-in commands (`cd`, `exit`)
+- Process fork and exec replacement
+- Parent-child wait synchronization
