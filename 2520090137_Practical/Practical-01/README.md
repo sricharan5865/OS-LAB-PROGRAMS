@@ -1,8 +1,8 @@
-# Practical-01: Basic Process Control System Calls
+# Practical-01: Interactive Command Execution Shell using fork, exec, wait
 
 ## Description
-Demonstration of Unix/Linux process creation and management system calls: `fork()`, `exec()`, `wait()`, and `exit()`.
+Implementation of OSSP Practical Experiment: Interactive Command Execution Shell using fork, exec, wait.
 
 ## Files
-- `main.c`: Source code demonstrating process creation and parent/child synchronization.
-- `Makefile`: Build instructions.
+- `main.c`: Source code.
+- `Makefile`: Build rules.

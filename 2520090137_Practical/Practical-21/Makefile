@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -pthread
-TARGET = practical01
+TARGET = practical21
 
 all: $(TARGET)
 
