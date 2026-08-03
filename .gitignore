@@ -1,0 +1,12 @@
+# Executables & Object files
+*.o
+*.out
+*.exe
+*.a
+*.so
+
+# IDE / System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
