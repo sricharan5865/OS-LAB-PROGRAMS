@@ -1,8 +1,7 @@
-# Practical-11: Client-Server IPC using Named Pipes (FIFOs)
+# Practical-11
 
-## Description
-Implementation of OSSP Practical Experiment: Client-Server IPC using Named Pipes (FIFOs).
+## Task A
+Develop a multithreaded counter application using POSIX threads demonstrating race conditions.
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Modify previous program using mutex locks (pthread_mutex_lock, pthread_mutex_unlock) and compare outputs.

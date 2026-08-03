@@ -1,8 +1,7 @@
-# Practical-03: File Copy using open, read, write, and close System Calls
+# Practical-03
 
-## Description
-Implementation of OSSP Practical Experiment: File Copy using open, read, write, and close System Calls.
+## Task A
+Develop a C program using fork() displaying PID, PPID, and process states at different execution stages.
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Design an experiment to observe process state transitions (Ready, Running, Waiting, Terminated) using ps, top, and /proc.

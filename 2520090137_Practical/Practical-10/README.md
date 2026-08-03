@@ -1,8 +1,7 @@
-# Practical-10: Shell Pipeline Implementation (ls -l | grep .c)
+# Practical-10
 
-## Description
-Implementation of OSSP Practical Experiment: Shell Pipeline Implementation (ls -l | grep .c).
+## Task A
+Investigate inode structures using ls -i, stat, and find. Create hard and symbolic links.
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Design a program using mmap() to perform file reading and writing.

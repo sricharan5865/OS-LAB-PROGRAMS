@@ -1,27 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <sys/wait.h>
+
+int global_var = 10;
+static int static_var = 20;
 
 int main() {
-    pid_t p1 = fork();
-    if (p1 == 0) {
-        sleep(2);
-        printf("Child 1 (PID: %d) exiting\n", getpid());
-        exit(10);
-    }
-    pid_t p2 = fork();
-    if (p2 == 0) {
-        sleep(1);
-        printf("Child 2 (PID: %d) exiting\n", getpid());
-        exit(20);
-    }
+    int stack_var = 30;
+    int *heap_var = (int*)malloc(sizeof(int));
+    *heap_var = 40;
 
-    int status;
-    waitpid(p2, &status, 0);
-    printf("Parent joined Child 2 first via waitpid. Exit status: %d\n", WEXITSTATUS(status));
+    printf("Code (main)      : %p\n", (void*)main);
+    printf("Global Variable  : %p\n", (void*)&global_var);
+    printf("Static Variable  : %p\n", (void*)&static_var);
+    printf("Heap Allocation  : %p\n", (void*)heap_var);
+    printf("Stack Variable   : %p\n", (void*)&stack_var);
 
-    wait(&status);
-    printf("Parent joined remaining Child 1 via wait. Exit status: %d\n", WEXITSTATUS(status));
+    free(heap_var);
     return 0;
 }

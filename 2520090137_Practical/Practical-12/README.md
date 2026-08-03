@@ -1,8 +1,7 @@
-# Practical-12: POSIX Signal Handling (SIGINT, SIGTERM, SIGUSR1)
+# Practical-12
 
-## Description
-Implementation of OSSP Practical Experiment: POSIX Signal Handling (SIGINT, SIGTERM, SIGUSR1).
+## Task A
+Implement Producer-Consumer problem using counting semaphores and POSIX threads.
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Design a deadlock scenario involving multiple threads and implement deadlock prevention via resource ordering.

@@ -1,8 +1,7 @@
-# Practical-04: System Call Tracing with strace Utility
+# Practical-04
 
-## Description
-Implementation of OSSP Practical Experiment: System Call Tracing with strace Utility.
+## Task A
+Write a C program where a parent process creates multiple child processes and synchronizes using wait() and waitpid().
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Create a scenario where a child process becomes a zombie process and modify the program to eliminate zombie processes.

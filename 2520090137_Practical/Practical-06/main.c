@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 #include <unistd.h>
 
 int main() {
-    printf("Running process for state monitoring. PID: %d\n", getpid());
-    printf("Check process status: cat /proc/%d/status\n", getpid());
-    sleep(10);
+    char *fifo = "/tmp/my_fifo";
+    mkfifo(fifo, 0666);
+    printf("FIFO created at %s\n", fifo);
     return 0;
 }

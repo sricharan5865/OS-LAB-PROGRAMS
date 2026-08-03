@@ -1,24 +1,11 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <sys/stat.h>
 
 int main() {
-    int pipefd[2];
-    pipe(pipefd);
-
-    if (fork() == 0) {
-        dup2(pipefd[1], STDOUT_FILENO);
-        close(pipefd[0]); close(pipefd[1]);
-        execlp("ls", "ls", "-l", NULL);
+    struct stat st;
+    if (stat("main.c", &st) == 0) {
+        printf("File: main.c, Inode: %lu, Links: %lu\n", st.st_ino, st.st_nlink);
     }
-
-    if (fork() == 0) {
-        dup2(pipefd[0], STDIN_FILENO);
-        close(pipefd[0]); close(pipefd[1]);
-        execlp("grep", "grep", ".c", NULL);
-    }
-
-    close(pipefd[0]); close(pipefd[1]);
-    wait(NULL); wait(NULL);
     return 0;
 }

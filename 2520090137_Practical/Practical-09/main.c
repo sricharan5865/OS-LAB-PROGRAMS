@@ -1,24 +1,16 @@
 #include <stdio.h>
+#include <fcntl.h>
 #include <unistd.h>
-#include <string.h>
 
 int main() {
-    int pipefd[2];
-    pipe(pipefd);
-    pid_t pid = fork();
+    int fd = open("test_low.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    write(fd, "Low-level system call I/O\n", 26);
+    close(fd);
 
-    if (pid == 0) {
-        close(pipefd[1]);
-        char buf[128];
-        read(pipefd[0], buf, sizeof(buf));
-        printf("[Consumer Child] Received data: %s\n", buf);
-        close(pipefd[0]);
-    } else {
-        close(pipefd[0]);
-        char msg[] = "OSSP Pipe IPC Data Payload";
-        write(pipefd[1], msg, strlen(msg) + 1);
-        close(pipefd[1]);
-        printf("[Producer Parent] Sent data to pipe.\n");
-    }
+    FILE *f = fopen("test_std.txt", "w");
+    fputs("Standard library buffered I/O\n", f);
+    fclose(f);
+
+    printf("I/O Comparison completed.\n");
     return 0;
 }

@@ -1,8 +1,7 @@
-# Practical-08: Zombie Process Creation, Investigation, and Elimination
+# Practical-08
 
-## Description
-Implementation of OSSP Practical Experiment: Zombie Process Creation, Investigation, and Elimination.
+## Task A
+Develop a program using malloc, calloc, realloc, free and monitor memory leaks via Valgrind.
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Develop a program demonstrating Copy-on-Write (COW) behavior after fork().

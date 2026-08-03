@@ -1,8 +1,7 @@
-# Practical-06: Process State Transitions Observation via /proc & Linux Tools
+# Practical-06
 
-## Description
-Implementation of OSSP Practical Experiment: Process State Transitions Observation via /proc & Linux Tools.
+## Task A
+Create a client-server application using Named Pipes (FIFOs).
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Create a POSIX signal handling program capturing SIGINT, SIGTERM, and SIGUSR1.

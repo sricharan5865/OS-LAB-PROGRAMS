@@ -1,8 +1,7 @@
-# Practical-05: Process State Inspection (PID, PPID, and Execution Stages)
+# Practical-05
 
-## Description
-Implementation of OSSP Practical Experiment: Process State Inspection (PID, PPID, and Execution Stages).
+## Task A
+Implement a producer-consumer communication system using anonymous pipes.
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Develop a program that executes equivalent of shell command ls -l | grep '.c' using fork, pipe, dup2, exec.

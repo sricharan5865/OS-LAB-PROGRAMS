@@ -1,18 +1,24 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <string.h>
 
 int main() {
-    printf("[State: Running] Parent Process PID: %d, PPID: %d\n", getpid(), getppid());
+    int pipefd[2];
+    pipe(pipefd);
     pid_t pid = fork();
+
     if (pid == 0) {
-        printf("[State: Running] Child Process PID: %d, PPID: %d\n", getpid(), getppid());
-        sleep(1);
-        printf("[State: Terminating] Child exiting.\n");
+        close(pipefd[1]);
+        char buf[128];
+        read(pipefd[0], buf, sizeof(buf));
+        printf("[Consumer Child] Received data: %s\n", buf);
+        close(pipefd[0]);
     } else {
-        printf("[State: Waiting] Parent waiting for child PID: %d\n", pid);
-        wait(NULL);
-        printf("[State: Terminated] Parent completed child join.\n");
+        close(pipefd[0]);
+        char msg[] = "OSSP Pipe IPC Data Payload";
+        write(pipefd[1], msg, strlen(msg) + 1);
+        close(pipefd[1]);
+        printf("[Producer Parent] Sent data to pipe.\n");
     }
     return 0;
 }

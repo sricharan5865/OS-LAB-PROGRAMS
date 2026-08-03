@@ -1,8 +1,7 @@
-# Practical-07: Parent Synchronization with Multiple Child Processes (wait & waitpid)
+# Practical-07
 
-## Description
-Implementation of OSSP Practical Experiment: Parent Synchronization with Multiple Child Processes (wait & waitpid).
+## Task A
+Write a program printing addresses of code, global, static, heap, and stack variables.
 
-## Files
-- `main.c`: Source code.
-- `Makefile`: Build rules.
+## Task B
+Study memory organization using /proc/PID/maps file and memory analysis tools.
