@@ -261,8 +261,11 @@ for idx, (p_title, code, out_text, exp) in enumerate(practical_programs, 1):
     doc_p.add_picture(out_img_path, width=Inches(6.0))
 
 doc_p_path = os.path.join(prac_dir, "Practical-01_Report.docx")
-doc_p.save(doc_p_path)
-print(f"Generated {doc_p_path}")
+try:
+    doc_p.save(doc_p_path)
+    print(f"Generated {doc_p_path}")
+except PermissionError:
+    print(f"File {doc_p_path} is currently locked (opened in Word), using existing generated version.")
 
 
 # -------------------------------------------------------------
@@ -345,5 +348,9 @@ for idx, (title, code_str, out_str, exp) in enumerate(skill_topics, 1):
     doc_s.add_picture(out_img, width=Inches(6.0))
 
 doc_s_path = os.path.join(skill_dir, "Skill-01_Report.docx")
-doc_s.save(doc_s_path)
-print(f"Generated {doc_s_path}")
+try:
+    doc_s.save(doc_s_path)
+    print(f"Generated {doc_s_path}")
+except PermissionError:
+    print(f"File {doc_s_path} is currently locked (opened in Word), using existing generated version.")
+

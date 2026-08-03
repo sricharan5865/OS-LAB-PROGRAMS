@@ -5,8 +5,14 @@
 *.a
 *.so
 
+# Python & Temporary files
+__pycache__/
+*.pyc
+~$*.docx
+
 # IDE / System files
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+
